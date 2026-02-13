@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I’m Sorry ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 100px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #ff6b81;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff6b81;
+    color: white;
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 25px;
+    font-size: 22px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: float 6s infinite ease-in;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>I’m Really Sorry ❤️</h1>
+    <p>
+        pavii car kolla to.....enk ishtayiiii❤️
+    </p>
+
+    <button onclick="showMessage()">Click if you still care 🥺</button>
+
+    <div class="hidden-message" id="loveMessage">
+        "onnu chirichee sunkee. 💖"
+    </div>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("loveMessage").style.display = "block";
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
